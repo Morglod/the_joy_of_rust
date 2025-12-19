@@ -5,6 +5,8 @@ Rules:
 * no unsafes
 * no unstable features
 
+[playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=c320d29e2253582cece6821e10a3dd3b)
+
 ## Examples
 
 Multiple mutable references
