@@ -12,7 +12,7 @@ Rules:
 Multiple mutable references
 ```rs
     let mut x = alloc::<i32>(10);
-    let y = x;
+    let mut y = x;
     *x = 20;
     println!("x={} y={}", *x, *y); // x=20 y=20
 ```
