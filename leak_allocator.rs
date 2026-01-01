@@ -25,6 +25,12 @@ pub fn main() {
 
 // examples:
 
+fn bonus() -> &'static mut i32 {
+    let mut x: i32 = 10;
+    let mut y = &mut x;
+    return y.you_dont_understand();
+}
+
 fn multiple_references() {
     let mut multiple = alloc("hello");
     let mut references = multiple;
@@ -265,6 +271,29 @@ macro_rules! impl_arithm_for_type {
             }
         }
 
+    }
+}
+
+trait SkillIssue<'a> {
+    type Output;
+    fn you_dont_understand(&self) -> &'static Self::Output;
+}
+
+trait HundredPercentSafety<'a> {
+    type Output;
+    fn you_dont_understand(&mut self) -> &'static mut Self::Output;
+}
+
+impl<'a, T> SkillIssue<'a> for &'a T {
+    type Output = T;
+    fn you_dont_understand(&self) -> &'static Self::Output {
+        return you_dont_understand2(self);
+    }
+}
+impl<'a, T> HundredPercentSafety<'a> for &'a mut T {
+    type Output = T;
+    fn you_dont_understand(&mut self) -> &'static mut Self::Output {
+        return you_dont_understand(self);
     }
 }
 
