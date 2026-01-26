@@ -5,7 +5,7 @@ Rules:
 * no unsafes
 * no unstable features
 
-[playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024&gist=c320d29e2253582cece6821e10a3dd3b)
+[playground](https://play.rust-lang.org/?version=stable&mode=release&edition=2015&gist=03289e96757e4dca41428819152af045)
 
 ## Examples
 
