@@ -111,7 +111,7 @@ use std::{
 };
 use std::ops::DerefMut;
 use std::ops::Deref;
-use once_cell::sync::Lazy;
+use std::sync::LazyLock as Lazy;
 
 fn perfectly_safe<'a, 'b, T>(_: &'a &'b(), arg: &'b mut T) -> &'a mut T {
     arg
